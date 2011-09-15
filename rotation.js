@@ -29,6 +29,8 @@ Site  : http://rafaelomarques.wordpress.com
 // Saves the initial rotation of the GameObject to restore it when necessary
 private var initialRotation;
 
+var mouseDrag : boolean = true;
+
 // Stores the key that will restore the initial GameObject rotation
 var restoreKey : String = "m";
 
@@ -88,5 +90,5 @@ function Update () {
 function OnMouseDrag() {
 	var h : float = horizontalSpeed  * Input.GetAxis ("Mouse X");
     var v : float = verticalSpeed * Input.GetAxis ("Mouse Y");
-    transform.Rotate (h, v, 0);
+    transform.Rotate (v, -h, 0);
 }
