@@ -88,7 +88,9 @@ function Update () {
 
 // Do the rotation of the GameObject according to the mouse drag action
 function OnMouseDrag() {
-	var h : float = horizontalSpeed  * Input.GetAxis ("Mouse X");
-    var v : float = verticalSpeed * Input.GetAxis ("Mouse Y");
-    transform.Rotate (v, -h, 0);
+	if (mouseDrag == true) {
+		var h : float = horizontalSpeed  * Input.GetAxis ("Mouse X");
+		var v : float = verticalSpeed * Input.GetAxis ("Mouse Y");
+		transform.Rotate (v, -h, 0);
+	}
 }
